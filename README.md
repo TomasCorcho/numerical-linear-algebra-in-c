@@ -58,9 +58,9 @@ void triangSup(double **matU, double *t, double *sol, int n);
 
 solves a non-singular upper-triangular system
 
-[
-Ux=t
-]
+$$
+Ux = t
+$$
 
 using back substitution.
 
@@ -68,9 +68,7 @@ The implementation computes the solution starting from the last equation and pro
 
 The method has quadratic computational complexity:
 
-[
-O(n^2).
-]
+$O(n^2)$.
 
 The program `main-trian.c` was used to test the implementation for matrices of different dimensions and to measure execution times.
 
@@ -164,67 +162,67 @@ This was applied to experimental data using both linear and quadratic models.
 
 For the linear approximation
 
-[
+$$
 y=c_1+c_2x,
-]
+$$
 
 the computed coefficients were approximately
 
-[
+$$
 c_1=0.0685714,
 \qquad
 c_2=1.1257143.
-]
+$$
 
 For the quadratic approximation
 
-[
+$$
 y=c_0+c_1x+c_2x^2,
-]
+$$
 
 the computed coefficients were approximately
 
-[
+$$
 c_0=-0.0057143,
-]
+$$
 
-[
+$$
 c_1=1.3238095,
-]
+$$
 
-[
+$$
 c_2=-0.0990476.
-]
+$$
 
 ## Boundary-Value Problems
 
 As an optional extension of the assignment, `valorsFrontera.c` solves second-order boundary-value problems of the form
 
-[
+$$
 y''(x)=p(x)y'(x)+q(x)y(x)+r(x),
-]
+$$
 
 subject to
 
-[
+$$
 y(a)=\alpha,
 \qquad
 y(b)=\beta.
-]
+$$
 
 The interval is divided into a uniform grid and the derivatives are approximated using centered finite differences:
 
-[
+$$
 y'(x_i)\approx
 \frac{y_{i+1}-y_{i-1}}{2h},
-]
+$$
 
 and
 
-[
+$$
 y''(x_i)\approx
 \frac{y_{i+1}-2y_i+y_{i-1}}{h^2}.
-]
+$$
 
 This produces a tridiagonal linear system that is solved using the Gaussian-elimination routines implemented earlier in the project.
 
@@ -232,35 +230,35 @@ Two example differential equations were studied:
 
 ### Example 1
 
-[
+$$
 y''=4(y-x),
-]
+$$
 
 with
 
-[
+$$
 0\leq x\leq1,
 \qquad
 y(0)=0,
 \qquad
 y(1)=2.
-]
+$$
 
 ### Example 2
 
-[
+$$
 y''=y'+2y+\cos x,
-]
+$$
 
 with
 
-[
+$$
 0\leq x\leq\frac{\pi}{2},
 \qquad
 y(0)=-0.3,
 \qquad
 y\left(\frac{\pi}{2}\right)=-0.1.
-]
+$$
 
 The files `func1.c` and `func2.c` define the corresponding functions (p(x)), (q(x)), and (r(x)).
 
