@@ -134,9 +134,9 @@ The input contains:
 
 `resol-constr.c` constructs systems whose matrix has entries
 
-[
+$$
 a_{ij}=\frac{1}{i+j-1}.
-]
+$$
 
 These matrices become increasingly ill-conditioned as their dimension grows.
 
@@ -148,15 +148,15 @@ For sufficiently large dimensions, the system can be classified as numerically s
 
 `sobredeter.c` solves overdetermined systems
 
-[
+$$
 Ax \approx c
-]
+$$
 
 using the normal equations
 
-[
+$$
 A^TAx=A^Tc.
-]
+$$
 
 This was applied to experimental data using both linear and quadratic models.
 
